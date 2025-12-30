@@ -5,8 +5,6 @@ import { redirect } from "next/navigation";
 export default async function Home() {
   const { userId } = await auth();
 
-  console.log("Homepage auth check - userId:", userId);
-
   if (userId) {
     redirect("/dashboard");
   }
