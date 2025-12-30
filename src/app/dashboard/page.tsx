@@ -47,27 +47,33 @@ export default async function DashboardPage({
         ) : (
           workouts.map((workout) =>
             workout.workoutExercises.map((workoutExercise) => (
-              <Card key={workoutExercise.id}>
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">
-                    {workoutExercise.exercise.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-1">
-                    {workoutExercise.sets.map((set) => (
-                      <div
-                        key={set.id}
-                        className="flex items-center gap-4 text-sm text-muted-foreground"
-                      >
-                        <span className="w-16">Set {set.setNumber}</span>
-                        <span>{set.reps} reps</span>
-                        <span>@ {set.weight} lbs</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <Link
+                key={workoutExercise.id}
+                href={`/dashboard/workout/${workout.id}`}
+                className="block transition-colors hover:bg-muted/50 rounded-lg"
+              >
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">
+                      {workoutExercise.exercise.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-1">
+                      {workoutExercise.sets.map((set) => (
+                        <div
+                          key={set.id}
+                          className="flex items-center gap-4 text-sm text-muted-foreground"
+                        >
+                          <span className="w-16">Set {set.setNumber}</span>
+                          <span>{set.reps} reps</span>
+                          <span>@ {set.weight} lbs</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))
           )
         )}
