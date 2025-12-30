@@ -20,7 +20,7 @@ import {
   addSet,
   completeWorkout,
   createExercise,
-} from "../actions";
+} from "../new/actions";
 
 type Exercise = {
   id: number;

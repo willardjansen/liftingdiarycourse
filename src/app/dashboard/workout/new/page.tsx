@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { getExercises } from "./actions";
-import { WorkoutForm } from "./_components/workout-form";
+import { WorkoutForm } from "../_components/workout-form";
 
 export default async function NewWorkoutPage({
   searchParams,
