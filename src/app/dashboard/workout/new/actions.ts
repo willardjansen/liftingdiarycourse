@@ -123,5 +123,5 @@ export async function createExercise(name: string) {
     .values({ name })
     .returning();
 
-  return exercise;
+  return { id: exercise.id, name: exercise.name };
 }
