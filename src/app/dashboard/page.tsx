@@ -26,7 +26,7 @@ export default async function DashboardPage({
       <div className="mb-8 flex items-center justify-between">
         <DatePicker selectedDate={selectedDate} />
         <Button asChild>
-          <Link href={`/dashboard/workouts/new?date=${selectedDate}`}>
+          <Link href={`/dashboard/workout/new?date=${selectedDate}`}>
             <Plus className="mr-2 h-4 w-4" />
             Log new workout
           </Link>
